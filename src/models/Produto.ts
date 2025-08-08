@@ -4,5 +4,6 @@ export default interface Produto {
   descricao: string;
   preco: number;
   quantidade: number;
+  foto:string;
   produto?: Produto[] | null;
 }
