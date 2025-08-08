@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom'
 import NavHome from '../../components/navbarHome/NavbarHome'
+import Avaliacao from '../../components/avaliacao/Avaliacao'
+import SetoresAtendidos from '../../components/setoresAtendidos/SetoresAtendidos'
 
 function Home() {
   return (
     <>
       <NavHome />
-      <section className="flex flex-col items-center justify-center text-center px-4 py-20">
+      <section className="flex flex-col border-inl border-purple-400 items-center justify-center text-center px-4 py-20">
         <span className="text-sm font-medium text-slate-500 mb-4 border border-slate-200 px-3 py-1 rounded-full">
           Seu marketplace moderno
         </span>
@@ -30,6 +32,10 @@ function Home() {
           <span>Pesquisar rapidamente na lista de produtos</span>
         </div>
       </section>
+
+      {/* Card de Avaliação */}
+      <Avaliacao />
+      <SetoresAtendidos />
     </>
   )
 }
