@@ -1,7 +1,7 @@
 
 function Avaliacao() {
   return (
-    <section className="py-16 px-4 bg-white text-center">
+    <section className="py-16 px-4 bg-[#f7f0fc]  border-[#dec3f2] text-center">
       <h2 className="text-3xl font-bold text-gray-900 mb-12">
         Confira o que nossos clientes <br /> estão falando sobre nós!
       </h2>
