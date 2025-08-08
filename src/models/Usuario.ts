@@ -7,5 +7,5 @@ export default interface Usuario {
   senha: string;
   foto: string;
   perfil: string;
-  produtos?: Produto[] | null;
+  produto?: Produto[] | null;
 }
