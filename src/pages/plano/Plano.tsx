@@ -96,10 +96,12 @@ function Plano() {
                 <span className="text-3xl font-bold">R$ 59</span>
                 <span className="text-gray-500 dark:text-gray-300">/mês</span>
               </h4>
+              <div className="flex justify-center">
               <button className="flex items-center text-sm mb-4 justify-center gap-2 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
                 Fale com um consultor
                 <span className="text-pink-300 text-lg hover:text-white">→</span>
               </button>
+              </div>
             </div>
 
             <div className="p-7 text-left text-sm">
@@ -189,10 +191,12 @@ function Plano() {
                 <span className="text-3xl font-bold">$ 79</span>
                 <span className="text-gray-500 dark:text-gray-300">/mês</span>
               </h4>
+              <div className="flex justify-center">
               <button className="flex items-center text-sm justify-center mb-4 gap-2 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
                 Fale com um consultor
                 <span className="text-pink-300 text-lg hover:text-white">→</span>
               </button>
+              </div>
             </div>
 
             <div className="p-7 text-left text-sm">
@@ -298,10 +302,12 @@ function Plano() {
                 <span className="text-3xl font-bold">R$ 149</span>
                 <span className="text-gray-500 dark:text-gray-300">/mês</span>
               </h4>
+              <div className="flex justify-center">
               <button className="flex items-center text-sm justify-center gap-2 mb-4 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
                 Fale com um consultor
                 <span className="text-pink-300 text-lg hover:text-white">→</span>
               </button>
+              </div>
             </div>
 
             <div className="p-7 text-left text-sm ">
