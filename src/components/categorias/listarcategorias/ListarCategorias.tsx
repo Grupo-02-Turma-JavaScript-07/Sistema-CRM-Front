@@ -2,12 +2,11 @@ import { useState, useEffect } from "react"
 import { DNA } from "react-loader-spinner"
 import type Categoria from "../../../models/Categoria"
 import { buscar } from "../../../services/Service"
+import CardCategorias from "../cardcategoria/CardCategoria"
 
 function ListarCategorias() {
 
     const [categorias, setCategorias] = useState<Categoria[]>([])
-
-
 
     async function buscarCategorias() {
         try {
@@ -23,7 +22,7 @@ function ListarCategorias() {
         <>
 
                             {/* Alterar conforme necessário */}
-        {/* {categorias.length === 0 && (
+        {categorias.length === 0 && (
             <DNA
             visible={true}
             height="200"
@@ -41,7 +40,7 @@ function ListarCategorias() {
                         ))}
                     </div>
                 </div>
-            </div> */}
+            </div>
         </>
     )
 }

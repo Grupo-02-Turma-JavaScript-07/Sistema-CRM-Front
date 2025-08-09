@@ -1,38 +1,36 @@
-import { Link } from "react-router-dom"
-import type Categoria from "../../../models/Categoria"
+import { Link } from "react-router-dom";
+import type Categoria from "../../../models/Categoria"; // ajustar o caminho conforme seu projeto
 
-interface CardCategoriasProps{
-    categoria: Categoria
+interface CardCategoriasProps {
+  categoria: Categoria;
 }
 
-function CardCategorias({ categoria }: CardCategoriasProps) {
+export default function CardCategorias({ categoria }: CardCategoriasProps) {
+  return (
+    <div className="border rounded-2xl overflow-hidden flex flex-col justify-between shadow-md hover:shadow-lg transition-shadow duration-300">
+      <header className="bg-indigo-800 text-white font-bold text-2xl py-3 px-6">
+        Categoria
+      </header>
 
-                        // HTML DO CARD DE CATEGORIA UTILIZADO NO BLOG/FARMACIA
+      <main className="p-6 bg-slate-100 flex flex-col gap-4">
+        <h3 className="text-xl font-semibold text-gray-800">{categoria.nome}</h3>
+        <p className="text-gray-600">{categoria.descricao}</p>
+      </main>
 
-    // return (
-    //     <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-    //         <header className='py-2 px-6 bg-indigo-800 text-white font-bold text-2xl'>
-    //             Categoria
-    //         </header>
-    //         <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
-    //         <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
-            
-    //         <div className="flex">
-    //             <Link to={`/editarcategoria/${categoria.id}`}
-    //                 className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-800 
-    //                 flex items-center justify-center py-2'>
-    //                 <button>Editar</button>
-    //             </Link>
-
-    //             <Link to={`/deletarcategoria/${categoria.id}`} 
-    //                 className='text-slate-100 bg-red-400 hover:bg-red-700 w-full 
-    //                     flex items-center justify-center'>
-    //                 <button>Deletar</button>
-    //             </Link>
-    //         </div>
-
-    //     </div>
-    // )
+      <footer className="flex gap-2">
+        <Link
+          to={`/editarcategoria/${categoria.id}`}
+          className="flex-1 bg-indigo-500 hover:bg-indigo-700 text-white py-2 rounded flex justify-center items-center transition"
+        >
+          Editar
+        </Link>
+        <Link
+          to={`/deletarcategoria/${categoria.id}`}
+          className="flex-1 bg-red-500 hover:bg-red-700 text-white py-2 rounded flex justify-center items-center transition"
+        >
+          Deletar
+        </Link>
+      </footer>
+    </div>
+  );
 }
-
-export default CardCategorias
