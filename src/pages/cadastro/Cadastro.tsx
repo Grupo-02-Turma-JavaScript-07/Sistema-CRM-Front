@@ -17,8 +17,10 @@ interface Usuario {
 function Cadastro() {
   const navigate = useNavigate();
 
-  const [isLoading, setIsLoading] = useState(false);
-  const [confirmaSenha, setConfirmaSenha] = useState("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [confirmaSenha, setConfirmaSenha] = useState<string>("");
+
   const [senhaValida, setSenhaValida] = useState(true);
 
   const [usuario, setUsuario] = useState<Usuario>({
@@ -79,9 +81,10 @@ function Cadastro() {
     };
 
     try {
-      await cadastrar(`/usuarios`, usuario, usuarioParaCadastro, setUsuario);
+      console.log("Enviando dados:", usuarioParaCadastro);
+      await cadastrar(`/usuarios`, usuarioParaCadastro, setUsuario);
       toast.success("Usuário cadastrado com sucesso!");
-    } catch (error: any) {
+    } catch (error: unknown) {
       toast.error(
         "Erro ao cadastrar o usuário: " 
       );
