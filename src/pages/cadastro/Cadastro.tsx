@@ -18,11 +18,8 @@ function Cadastro() {
   const navigate = useNavigate();
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-
   const [confirmaSenha, setConfirmaSenha] = useState<string>("");
-
   const [senhaValida, setSenhaValida] = useState(true);
-
   const [usuario, setUsuario] = useState<Usuario>({
     id: 0,
     nome: "",
@@ -31,6 +28,17 @@ function Cadastro() {
     foto: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
     perfil: "CLIENTE",
   });
+
+  const nomeValido = usuario.nome.trim().length >= 3;
+  const nomeInvalido = usuario.nome.trim().length > 0 && !nomeValido;
+
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(usuario.email);
+  const emailInvalido = usuario.email.trim().length > 0 && !emailValido;
+
+  const confirmaSenhaValida = confirmaSenha === usuario.senha;
+
+  const formularioValido =
+    nomeValido && emailValido && senhaValida && confirmaSenhaValida;
 
   useEffect(() => {
     if (usuario.id !== 0) {
@@ -60,16 +68,6 @@ function Cadastro() {
   async function cadastrarNovoUsuario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!senhaValida) {
-      toast.warn("A senha deve ter no mínimo 8 caracteres.");
-      return;
-    }
-
-    if (confirmaSenha !== usuario.senha) {
-      toast.warn("As senhas não conferem.");
-      return;
-    }
-
     setIsLoading(true);
 
     const usuarioParaCadastro = {
@@ -85,9 +83,7 @@ function Cadastro() {
       await cadastrar(`/usuarios`, usuarioParaCadastro, setUsuario);
       toast.success("Usuário cadastrado com sucesso!");
     } catch (error: unknown) {
-      toast.error(
-        "Erro ao cadastrar o usuário: " 
-      );
+      toast.error("Erro ao cadastrar o usuário: ");
     }
 
     setIsLoading(false);
@@ -96,7 +92,7 @@ function Cadastro() {
   return (
     <>
       <NavHome />
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-purple-50 py-30">
         <form
           onSubmit={cadastrarNovoUsuario}
           className="bg-white p-8 rounded-lg shadow-md w-full max-w-3xl"
@@ -109,10 +105,21 @@ function Cadastro() {
               <input
                 type="text"
                 name="nome"
+                placeholder="Digite seu nome"
                 value={usuario.nome}
                 onChange={atualizarEstado}
-                className="w-full border border-gray-300 rounded-md px-3 py-2"
+                className={`w-full border rounded-md px-3 py-2 ${
+                  nomeInvalido
+                    ? "border-red-500"
+                    : "border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
+                }`}
+                autoFocus
               />
+              {nomeInvalido && (
+                <p className="text-red-500 text-sm mt-1">
+                  O nome deve ter pelo menos 3 caracteres.
+                </p>
+              )}
             </div>
 
             <div>
@@ -120,10 +127,20 @@ function Cadastro() {
               <input
                 type="email"
                 name="email"
+                placeholder="Digite seu email"
                 value={usuario.email}
                 onChange={atualizarEstado}
-                className="w-full border border-gray-300 rounded-md px-3 py-2"
+                className={`w-full border rounded-md px-3 py-2 ${
+                  emailInvalido
+                    ? "border-red-500"
+                    : "border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
+                }`}
               />
+              {emailInvalido && (
+                <p className="text-red-500 text-sm mt-1">
+                  Por favor, insira um email válido.
+                </p>
+              )}
             </div>
 
             <div>
@@ -131,10 +148,13 @@ function Cadastro() {
               <input
                 type="password"
                 name="senha"
+                placeholder="Digite sua senha"
                 value={usuario.senha}
                 onChange={atualizarEstado}
                 className={`w-full rounded-md px-3 py-2 border ${
-                  senhaValida ? "border-gray-300" : "border-red-500"
+                  senhaValida
+                    ? "border-gray-300"
+                    : "border-red-500 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
                 }`}
               />
               {!senhaValida && (
@@ -149,10 +169,20 @@ function Cadastro() {
               <input
                 type="password"
                 name="confirmarSenha"
+                placeholder="Confirme sua senha"
                 value={confirmaSenha}
                 onChange={handleConfirmarSenha}
-                className="w-full border border-gray-300 rounded-md px-3 py-2"
+                className={`w-full rounded-md px-3 py-2 border ${
+                  confirmaSenha.length > 0 && !confirmaSenhaValida
+                    ? "border-red-500"
+                    : "border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
+                }`}
               />
+              {confirmaSenha.length > 0 && !confirmaSenhaValida && (
+                <p className="text-red-500 text-sm mt-1">
+                  As senhas não conferem.
+                </p>
+              )}
             </div>
 
             <div>
@@ -163,7 +193,7 @@ function Cadastro() {
                 value={usuario.foto}
                 placeholder="https://..."
                 onChange={atualizarEstado}
-                className="w-full border border-gray-300 rounded-md px-3 py-2"
+                className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
               />
             </div>
           </div>
@@ -174,7 +204,7 @@ function Cadastro() {
               name="perfil"
               value={usuario.perfil}
               onChange={atualizarEstado}
-              className="w-full border border-gray-300 rounded-md px-3 py-2"
+              className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
             >
               <option value="CLIENTE">Cliente</option>
               <option value="ADMIN">Administrador</option>
@@ -187,14 +217,18 @@ function Cadastro() {
             <button
               type="button"
               onClick={() => navigate("/login")}
-              className="px-6 py-2 rounded-md text-white bg-red-400 hover:bg-red-600"
+              className="px-6 py-2 rounded-md text-white bg-red-400 hover:bg-red-600 cursor-pointer"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              disabled={isLoading}
-              className="px-6 py-2 rounded-md text-white font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:opacity-90 flex justify-center items-center"
+              disabled={isLoading || !formularioValido}
+              className={`px-6 py-2 rounded-md text-white font-semibold bg-gradient-to-r from-indigo-500 to-purple-500 hover:opacity-90 flex justify-center items-center ${
+                isLoading || !formularioValido
+                  ? "opacity-50 cursor-not-allowed"
+                  : "cursor-pointer"
+              }`}
             >
               {isLoading ? (
                 <RotatingLines
