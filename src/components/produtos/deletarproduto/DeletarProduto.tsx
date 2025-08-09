@@ -4,10 +4,6 @@ import type Produto from "../../../models/Produto"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 
-
-                                            //PRECISA ALTERAR O HTML PARA O MODELO QUE FOR NO FIGMA
-
-
 function DeletarProduto() {
 
     const navigate = useNavigate()
@@ -20,7 +16,11 @@ function DeletarProduto() {
     async function buscarPorId(id: string) {
         try {
             await buscar(`/postagens/${id}`, setProduto)
-        } catch (error: any){}
+        } catch (error: any){
+             if (error.toString().includes('403')) {
+                handleLogout()
+            }
+        }
     }
 
 
@@ -51,7 +51,7 @@ function DeletarProduto() {
     }
 
     function retornar() {
-        navigate("/postagens")
+        navigate("/produtos")
     }
     
     return (
@@ -100,7 +100,3 @@ function DeletarProduto() {
 }
 
 export default DeletarProduto
-
-function handleLogout() {
-    throw new Error("Function not implemented.")
-}
