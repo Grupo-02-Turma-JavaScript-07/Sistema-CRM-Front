@@ -1,4 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 import "./App.css";
 import Footer from "./components/footer/Footer";
 import Cadastro from "./pages/cadastro/Cadastro";
@@ -25,7 +28,20 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>
+
         <Footer />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
       </BrowserRouter>
     </>
   );
