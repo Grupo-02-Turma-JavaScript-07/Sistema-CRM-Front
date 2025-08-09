@@ -151,10 +151,8 @@ function Cadastro() {
                 placeholder="Digite sua senha"
                 value={usuario.senha}
                 onChange={atualizarEstado}
-                className={`w-full rounded-md px-3 py-2 border ${
-                  senhaValida
-                    ? "border-gray-300"
-                    : "border-red-500 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
+                className={`w-full rounded-md px-3 py-2 border focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600 ${
+                  senhaValida ? "border-gray-300" : "border-red-500"
                 }`}
               />
               {!senhaValida && (
