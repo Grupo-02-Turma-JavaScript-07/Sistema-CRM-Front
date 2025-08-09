@@ -11,7 +11,7 @@ function NavHome() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
       <div className="flex items-center gap-2 text-slate-900 font-semibold ">
         <FaStore className="text-2xl" />
-        <Link to="/" className="font-katibeh text-5xl md:text-5xl mt-5 text-slate-800 hover:text-purple-400 transition">Flow CRM</Link>
+        <Link to="/" className="font-katibeh text-5xl md:text-5xl mb-3 text-slate-800 hover:text-purple-400 transition">Flow CRM</Link>
       </div>
 
        {/* Botão Mobile Responsivo*/}

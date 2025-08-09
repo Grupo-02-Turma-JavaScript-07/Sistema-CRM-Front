@@ -28,7 +28,7 @@ function NavbarPerfil() {
           <FaStore className="text-2xl" />
           <Link
             to="/"
-            className="font-katibeh text-4xl mt-5 md:text-5xl text-slate-800 hover:text-purple-400 transition"
+            className="font-katibeh text-4xl mb-3 md:text-5xl text-slate-800 hover:text-purple-400 transition"
           >
             Flow CRM
           </Link>
@@ -46,12 +46,12 @@ function NavbarPerfil() {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/planos"
             className="text-slate-800 hover:text-purple-400 transition"
           >
             Planos
-          </Link>
+          </Link> */}
           <Link
             to="/cadastro"
             className="text-slate-800 hover:text-purple-400 transition"

@@ -19,7 +19,7 @@ function Home() {
           Navegue por categorias, explore a vitrine por vendedor e cadastre usuários em uma interface rápida e bonita.
         </p>
         <div className="flex gap-4 mb-6">
-          <Link to="/produtos" className="bg-gradient-to-r from-[#8d34cc] to-[#c2a5d7] text-white px-5 py-2 rounded-lg font-medium shadow hover:opacity-90 transition">
+          <Link to="/produtos" className="bg-gradient-to-r from-[#62268d] to-[#9d5ec9] hover:from-[#9d5ec9] hover:to-[#62268d] text-white px-5 py-2 rounded-lg font-medium shadow hover:opacity-90 transition">
             Explorar produtos
           </Link>
           {/* #todo: vamos usar uma rota para planos?? */}

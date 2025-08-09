@@ -9,8 +9,9 @@ function Footer() {
 
   return (
     <>
-      <div className="relative z-10 max-w-7xl mx-auto px-12 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-sm">
-        <div className="text-0">
+    <div className="bg-[#f7f0fc]">
+      <div className="relative  z-10 max-w-7xl mx-auto px-12 py-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 text-sm">
+        <div className="text-center md:text-left">
           <h2 className="font-katibeh font-bold text-5xl mt-2 my-4 text-slate-800 ">
             Flow CRM
           </h2>
@@ -66,11 +67,11 @@ function Footer() {
           </ul>
         </div>
 
-        <div className="text-right">
+        <div className="text-center md:text-right">
           <h3 className="text-base font-semibold text-purple-400 mb-4">
             Nos acompanhe
           </h3>
-          <div className="flex justify-end gap-4 mt-2">
+          <div className="flex md:justify-end justify-center gap-4 mt-2">
             <a
               href="https://www.linkedin.com/in/naah-carvalho/"
               target="_blank"
@@ -98,6 +99,8 @@ function Footer() {
           </div>
         </div>
       </div>
+    </div>
+      
 
       <div className="text-center text-xs text-white/80 py-6 border-t border-gray-100 bg-purple-900">
         &copy; {data} Flow CRM. Todos os direitos reservados.
