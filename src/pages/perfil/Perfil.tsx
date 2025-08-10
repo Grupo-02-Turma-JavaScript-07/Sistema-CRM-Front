@@ -46,7 +46,7 @@ function Perfil() {
         </div>
         <div className='col-span-2 space-y-8'>
           <div className='bg-white rounded-lg shadow p-6'>
-            <h3 className='text-purple-600 text-xl font-bold'>Informações gerais</h3>
+            <h3 className='text-purple-500 text-xl font-bold'>Informações gerais</h3>
             <p className='text-sm text-gray-500 mb-4'>Dados da conta</p>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4'>
               <div>
@@ -74,8 +74,9 @@ function Perfil() {
           {/* Alguma tabela: Talvez o tipo de plano selecionado pelo cliente? */}
           {/* Coloquei um texto aleatório ou apenas podemos colocar nada */}
           <div className='bg-white rounded-lg shadow p-6'>
-            <h3 className='text-purple-600 text-xl font-bold'>Resumo das atividades</h3>
-            <p className='text-sm text-gray-500 mb-4'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <h3 className='text-purple-500 text-xl font-bold mb-4'>Plano contratado</h3>
+            <p className='text-gray-900 font-medium'>Corporativo</p>
+            <span className='text-gray-500 text-sm text-justify'>Solução completa com suporte prioritário, integrações e tudo para escalar suas vendas.</span>
           </div>
         </div>
       </div>
