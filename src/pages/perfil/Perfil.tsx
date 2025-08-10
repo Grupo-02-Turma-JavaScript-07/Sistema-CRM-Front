@@ -1,4 +1,3 @@
-import { useNavigate } from 'react-router-dom'
 import NavbarPerfil from '../../components/navbarperfil/NavbarPerfil'
 import { useState } from 'react';
 import type Usuario from '../../models/Usuario';
