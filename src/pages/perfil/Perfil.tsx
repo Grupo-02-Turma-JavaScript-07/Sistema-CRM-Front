@@ -5,7 +5,6 @@ import type Usuario from '../../models/Usuario';
 import { FaEdit } from 'react-icons/fa';
 
 function Perfil() {
-  const navigate = useNavigate()
 
   const [usuario, setUsuario] = useState<Usuario>({
       id: 10,
@@ -63,7 +62,7 @@ function Perfil() {
               </div>
               <div>
                 <span className='text-gray-500 text-sm'>Cargo</span>
-                <p className='text-gray-900 font-medium'>{usuario.perfil}</p>
+                <p className='text-gray-900 font-medium'>Gerente</p>
               </div>
               <div>
                 <span className="text-gray-500 text-sm">Cidade</span>
@@ -72,7 +71,6 @@ function Perfil() {
             </div>
           </div>
           {/* Alguma tabela: Talvez o tipo de plano selecionado pelo cliente? */}
-          {/* Coloquei um texto aleatório ou apenas podemos colocar nada */}
           <div className='bg-white rounded-lg shadow p-6'>
             <h3 className='text-purple-500 text-xl font-bold mb-4'>Plano contratado</h3>
             <p className='text-gray-900 font-medium'>Corporativo</p>
