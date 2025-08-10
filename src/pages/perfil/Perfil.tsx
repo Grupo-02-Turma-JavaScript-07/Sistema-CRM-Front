@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import NavbarPerfil from '../../components/navbarperfil/NavbarPerfil'
 import { useState } from 'react';
 import type Usuario from '../../models/Usuario';
+import { FaEdit } from 'react-icons/fa';
 
 function Perfil() {
   const navigate = useNavigate()
@@ -29,13 +30,14 @@ function Perfil() {
             />
             <h2 className='text-xl font-semibold text-gray-900'>{usuario.nome}</h2>
             <p className='text-sm text-gray-500 mb-6'>{usuario.email}</p>
-            <div className='flex space-x-4 w-full'>
+            <div className='flex  justify-center flex-wrap space-x-2 w-full gap-y-4'>
               <button 
-                className=' flex-1 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'>
+                className='flex items-center gap-x-2 bg-gradient-to-r from-indigo-500 to-purple-500 hover:opacity-90 text-white font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'>
+                <FaEdit/>
                 Editar
               </button>
               <button
-                className='flex-1 bg-white border border-gray-300 text-[#C27AFF] hover:bg-[#F1F5F9] font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'
+                className='flex items-center bg-white border border-gray-300 text-[#C27AFF] hover:bg-[#F1F5F9] font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'
               >
                 Mensagens
               </button>
