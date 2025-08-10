@@ -1,22 +1,34 @@
-import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import NavbarPerfil from '../../components/navbarperfil/NavbarPerfil'
+import { useState } from 'react';
+import type Usuario from '../../models/Usuario';
 
 function Perfil() {
+  const navigate = useNavigate()
+
+  const [usuario, setUsuario] = useState<Usuario>({
+      id: 10,
+      nome: "Elisa Mendes",
+      email: "lisamendes@email.com",
+      senha: "senhaelisa002",
+      foto: "https://randomuser.me/api/portraits/women/86.jpg",
+      perfil: "Gerente",
+    });
+    
   return (
     <>
     <NavbarPerfil />
     <div className='bg-[#FAF5FF] min-h-screen p-8'>
-      Aqui está o GRID
-      <div className='max-w-6xl bg-purple-300 container mx-auto grid grid-cols-1 md:grid-cols-3'>
-        <div className='bg-white col-span-1 rounded-lg shadow p-6'>
+      <div className='container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <div className='col-span-1 bg-white rounded-lg shadow p-6 self-start'>
           <div className='flex flex-col items-center'>
             <img 
               src="https://randomuser.me/api/portraits/women/86.jpg"
-              alt="Elisa Mendes"
+              alt={usuario.nome}
               className='w-24 h-24 rounded-full object-cover mb-4' 
             />
-            <h2 className='text-xl font-semibold'>Elisa Mendes</h2>
-            <p className='text-sm'>elisamendes@email.com</p>
+            <h2 className='text-xl font-semibold text-gray-900'>{usuario.nome}</h2>
+            <p className='text-sm text-gray-500 mb-6'>{usuario.email}</p>
             <div className='flex space-x-4'>
               <button 
                 className='bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'>
@@ -28,6 +40,40 @@ function Perfil() {
                 Mensagens
               </button>
             </div>
+          </div>
+        </div>
+        <div className='col-span-2 space-y-8'>
+          <div className='bg-white rounded-lg shadow p-6'>
+            <h3 className='text-purple-600 text-xl font-bold'>Informações gerais</h3>
+            <p className='text-sm text-gray-500 mb-4'>Dados da conta</p>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4'>
+              <div>
+                <span className='text-gray-500 text-sm'>Nome</span>
+                <p className='text-gray-900 font-medium'>{usuario.nome}</p>
+              </div>
+              <div>
+                <span className='text-gray-500 text-sm'>E-mail</span>
+                <p className='text-gray-900 font-medium'>{usuario.email}</p>
+              </div>
+              <div>
+                <span className='text-gray-500 text-sm'>Organização</span>
+                <p className='text-gray-900 font-medium'>Acme S.A</p>
+              </div>
+              <div>
+                <span className='text-gray-500 text-sm'>Cargo</span>
+                <p className='text-gray-900 font-medium'>{usuario.perfil}</p>
+              </div>
+              <div>
+                <span className="text-gray-500 text-sm">Cidade</span>
+                <p className="text-gray-900 font-medium">São Paulo, BR</p>
+              </div>
+            </div>
+          </div>
+          {/* Alguma tabela: Talvez o tipo de plano selecionado pelo cliente? */}
+          {/* Coloquei um texto aleatório ou apenas podemos colocar nada */}
+          <div className='bg-white rounded-lg shadow p-6'>
+            <h3 className='text-purple-600 text-xl font-bold'>Resumo das atividades</h3>
+            <p className='text-sm text-gray-500 mb-4'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
           </div>
         </div>
       </div>
