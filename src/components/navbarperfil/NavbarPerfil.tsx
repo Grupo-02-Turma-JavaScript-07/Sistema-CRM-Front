@@ -53,7 +53,7 @@ function NavbarPerfil() {
             Planos
           </Link> */}
           <Link
-            to="/cadastro"
+            to="/categorias"
             className="text-slate-800 hover:text-purple-400 transition"
           >
             Categorias

@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState, useEffect, type ChangeEvent, type FormEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { RotatingLines } from "react-loader-spinner";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import type Categoria from "../../../models/Categoria";
+import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
 
 function FormCategoria() {
     const navigate = useNavigate();
@@ -64,7 +66,10 @@ function FormCategoria() {
     }
 
     return (
-        <div className="container flex flex-col items-center mx-auto">
+  <div className="container flex flex-col items-center mx-auto pt-50">
+    <div className="fixed top-0 left-0 w-full z-50">
+                <NavbarPerfil />
+                </div>
             <h1 className="text-3xl font-semibold text-left my-5">
                 {id === undefined ? "Nova Categoria" : "Editar Categoria"}
             </h1>

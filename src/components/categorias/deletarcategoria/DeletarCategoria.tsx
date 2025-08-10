@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../../models/Categoria";
 import { FiTrash2, FiX } from "react-icons/fi";
+import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
 
 function DeletarCategoria() {
   const navigate = useNavigate();
@@ -48,9 +49,12 @@ function DeletarCategoria() {
 
 return (
   <div className="flex flex-col justify-center items-center min-h-screen px-4">
+    <div className="fixed top-0 left-0 w-full">
+      <NavbarPerfil />
+    </div>
     
     {/* Título e descrição fora do card */}
-    <h1 className="text-2xl font-bold text-gray-900 mb-2">
+    <h1 className="text-2xl font-bold  text-gray-900 mb-2">
       Exclusão de Categoria
     </h1>
     <p className="text-gray-600 mb-6 text-center max-w-lg">
