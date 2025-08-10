@@ -17,7 +17,7 @@ function Perfil() {
   return (
     <>
     <NavbarPerfil />
-    <div className='bg-[#FAF5FF] min-h-screen p-8'>
+    <div className='bg-white min-h-screen p-8'>
       <div className='container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8'>
         <div className='col-span-1 bg-white rounded-lg shadow p-6 self-start'>
           <div className='flex flex-col items-center'>
