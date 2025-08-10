@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { FaStore, FaSignInAlt, FaTimes, FaBars, FaUserPlus } from 'react-icons/fa'
 import { useState } from 'react'
 
-function NavHome() {
+function NavbarHome() {
   const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -98,4 +98,4 @@ function NavHome() {
   )
 }
 
-export default NavHome
+export default NavbarHome

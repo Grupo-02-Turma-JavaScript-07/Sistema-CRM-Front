@@ -1,9 +1,9 @@
 import { FaArrowRight } from 'react-icons/fa';
-import NavHome from '../../components/navbarHome/NavbarHome';
+import NavbarHome from '../../components/navbarHome/NavbarHome';
 
 function Plano() {
   return (
-    <><NavHome />
+    <><NavbarHome />
       <div className="flex flex-col mt-10 items-center justify-center text-center min-h-screen px-4">
         <h6 className="text-sm font-semibold text-gray-500 mb-2">PREÇOS E PLANOS</h6>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">

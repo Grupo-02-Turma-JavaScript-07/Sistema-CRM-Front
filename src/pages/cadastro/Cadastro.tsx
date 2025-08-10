@@ -2,7 +2,7 @@ import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { RotatingLines } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import NavHome from "../../components/navbarHome/NavbarHome";
+import NavbarHome from "../../components/navbarHome/NavbarHome";
 import { cadastrar } from "../../services/Service";
 
 interface Usuario {
@@ -91,7 +91,7 @@ function Cadastro() {
 
   return (
     <>
-      <NavHome />
+      <NavbarHome />
       <div className="min-h-screen flex items-center justify-center bg-purple-50 py-30">
         <form
           onSubmit={cadastrarNovoUsuario}
