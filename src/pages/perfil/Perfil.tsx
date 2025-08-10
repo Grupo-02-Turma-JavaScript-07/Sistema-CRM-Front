@@ -29,13 +29,13 @@ function Perfil() {
             />
             <h2 className='text-xl font-semibold text-gray-900'>{usuario.nome}</h2>
             <p className='text-sm text-gray-500 mb-6'>{usuario.email}</p>
-            <div className='flex space-x-4'>
+            <div className='flex space-x-4 w-full'>
               <button 
-                className='bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'>
+                className=' flex-1 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'>
                 Editar
               </button>
               <button
-                className='bg-white border border-gray-300 text-[#C27AFF] hover:bg-[#F1F5F9] font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'
+                className='flex-1 bg-white border border-gray-300 text-[#C27AFF] hover:bg-[#F1F5F9] font-bold py-2 px-6 rounded-md transition duration-300 ease-in-out'
               >
                 Mensagens
               </button>
