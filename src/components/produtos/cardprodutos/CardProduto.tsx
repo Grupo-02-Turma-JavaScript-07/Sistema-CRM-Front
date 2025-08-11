@@ -16,7 +16,7 @@ function CardProduto ( {produto} : CardProdutoProps ) {
                         <h5 className="text-lg font-semibold text-gray-900 dark:text-white">{produto.nome}</h5>
                         <p className="text-sm text-gray-500 dark:text-gray-400">{produto.categoria?.descricao}</p>
                     </div>
-                    <img className="w-16 h-16 rounded-xl" src="https://t4.ftcdn.net/jpg/04/62/88/97/360_F_462889752_tSWP7qDYpUIL6QRlbyIC8v68jaXwVXyx.jpg" alt="Imagem do produto" />
+                    <img className="w-16 h-16 rounded-xl" src={produto.foto ? produto.foto : "https://t4.ftcdn.net/jpg/04/62/88/97/360_F_462889752_tSWP7qDYpUIL6QRlbyIC8v68jaXwVXyx.jpg"} alt="Imagem do produto" />
                 </div>
 
                 <div className="flex items-center justify-between mb-4">
