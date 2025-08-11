@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../../models/Categoria";
 import { FiTrash2, FiX } from "react-icons/fi";
 import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
+import { toast } from "react-toastify";
 
 function DeletarCategoria() {
   const navigate = useNavigate();
@@ -33,10 +34,10 @@ function DeletarCategoria() {
 
     try {
       await deletar(`/categorias/${id}`);
-      alert("Categoria deletada com sucesso");
+      toast.success("Categoria deletada com sucesso");
       retornar();
     } catch (error) {
-      alert("Erro ao deletar a categoria.");
+      toast.error("Erro ao deletar a categoria.");
       console.error(error);
     } finally {
       setIsLoading(false);
