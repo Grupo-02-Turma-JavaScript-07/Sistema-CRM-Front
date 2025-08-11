@@ -83,7 +83,7 @@ function NavbarPerfil() {
                 <span className="sr-only">Abrir menu do usuário</span>
                 <img
                 className="w-10 h-10 rounded-full outline -outline-offset-1 outline-white/10"
-                src={usuario?.foto || "https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png"}
+                src={usuario?.foto || "https://randomuser.me/api/portraits/women/86.jpg"}
                 alt={`Foto de perfil de ${usuario?.nome}`}
                 />
             </button>

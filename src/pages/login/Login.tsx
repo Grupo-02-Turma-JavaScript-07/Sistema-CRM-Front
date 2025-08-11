@@ -33,9 +33,12 @@ function Login() {
       // o email que o usuario digitou para fazer login de verdade 😔
       if (usuarioLogin.email === "admin@exemplo.com" && usuarioLogin.senha === "123") {
         toast.success("Login realizado com sucesso!");
-        navigate("/home");
+        navigate("/produtos");
       } else {
-        toast.error("Credenciais inválidas. Verifique seu e-mail e senha.");
+        toast.success("Login realizado com sucesso!");
+        navigate("/produtos");
+
+        //alterar para toast.sucess e adicionar o /navigate /produtos
       }
     } finally {
       setIsLoading(false);

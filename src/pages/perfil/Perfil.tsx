@@ -11,7 +11,7 @@ function Perfil() {
       email: "lisamendes@email.com",
       senha: "senhaelisa002",
       foto: "https://randomuser.me/api/portraits/women/86.jpg",
-      perfil: "Gerente",
+      perfil: "Corporativo",
     });
     
   return (

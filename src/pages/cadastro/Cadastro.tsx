@@ -5,13 +5,13 @@ import { toast } from "react-toastify";
 import NavbarHome from "../../components/navbarHome/NavbarHome";
 import { cadastrar } from "../../services/Service";
 
-interface Usuario {
+  interface Usuario {
   id: number;
   nome: string;
   email: string;
   senha: string;
   foto: string;
-  perfil: string;
+  perfil: 'GRATUITO' | 'BÁSICO' | 'PRÓ' | 'CORPORATIVO';
 }
 
 function Cadastro() {
@@ -26,7 +26,7 @@ function Cadastro() {
     email: "",
     senha: "",
     foto: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
-    perfil: "CLIENTE",
+    perfil: 'GRATUITO' 
   });
 
   const nomeValido = usuario.nome.trim().length >= 3;
@@ -204,10 +204,10 @@ function Cadastro() {
               onChange={atualizarEstado}
               className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-600"
             >
-              <option value="CLIENTE">Cliente</option>
-              <option value="ADMIN">Administrador</option>
-              <option value="GERENTE">Gerente</option>
-              <option value="VENDEDOR">Vendedor</option>
+              <option value="GRATUITO">Gratuito</option>
+              <option value="BÁSICO">Básico</option>
+              <option value="PRÓ">Pró</option>
+              <option value="CORPORATIVO">Corporativo</option>
             </select>
           </div>
 
