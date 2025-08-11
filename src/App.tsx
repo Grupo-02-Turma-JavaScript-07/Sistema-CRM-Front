@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Form, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -7,7 +7,7 @@ import Cadastro from "./pages/cadastro/Cadastro";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Perfil from "./pages/perfil/Perfil";
-import Plano from "./pages/plano/Plano";
+import Plano from "./pages/formulario/Form";
 import Produto from "./pages/produto/Produto";
 import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCategoria";
 import FormCategoria from "./components/categorias/formcategoria/FormCategoria";
@@ -22,6 +22,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/planos" element={<Plano />} />
+            <Route path="/formulario" element={<Form />} />
             <Route path="/produtos" element={<Produto />} />
             <Route path="/categorias" element={<Categoria />} />
             <Route path="/categorias/:id" element={<FormCategoria />} />
