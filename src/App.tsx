@@ -9,6 +9,8 @@ import Login from "./pages/login/Login";
 import Perfil from "./pages/perfil/Perfil";
 import Plano from "./pages/plano/Plano";
 import Produto from "./pages/produto/Produto";
+import DeletarProduto from './components/produtos/deletarproduto/DeletarProduto';
+import FormProduto from './components/produtos/formproduto/FormProduto';
 import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCategoria";
 import FormCategoria from "./components/categorias/formcategoria/FormCategoria";
 import Categoria from "./pages/categoria/Categoria";
@@ -21,8 +23,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/planos" element={<Plano />} />
             <Route path="/produtos" element={<Produto />} />
+            <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
+            <Route path="/deletarproduto/:id" element={<FormProduto />} />
+            <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
+            <Route path="/planos" element={<Plano />} />
             <Route path="/categorias" element={<Categoria />} />
             <Route path="/categorias/:id" element={<FormCategoria />} />
             <Route path="/cadastrarcategoria" element={<FormCategoria />} />
@@ -33,7 +38,6 @@ function App() {
             <Route path="/login" element={<Login />} />
           </Routes>
         </div>
-
         <Footer />
         <ToastContainer
           position="top-right"

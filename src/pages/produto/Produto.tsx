@@ -1,8 +1,11 @@
-import React from 'react'
+import ListaProdutos from '../../components/produtos/listarprodutos/ListaProdutos'
 
 function Produto() {
   return (
-    <div>Produto</div>
+    <div>
+      <ListaProdutos />
+      {/* <DeletarProduto /> */}
+    </div>
   )
 }
 
