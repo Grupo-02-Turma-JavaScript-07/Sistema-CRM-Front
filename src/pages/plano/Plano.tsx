@@ -4,7 +4,7 @@ import NavbarHome from '../../components/navbarHome/NavbarHome';
 function Plano() {
   return (
     <><NavbarHome />
-      <div className="flex flex-col mt-10 items-center justify-center text-center min-h-screen px-4">
+      <div className="flex flex-col mt-10 items-center justify-centertext-center min-h-screen px-4">
         <h6 className="text-sm font-semibold text-gray-500 mb-2">PREÇOS E PLANOS</h6>
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800">
           O CRM com o melhor custo-benefício do mercado.
@@ -23,8 +23,12 @@ function Plano() {
                   <span className="text-gray-500 dark:text-gray-300">/mês</span>
                 </h4>
                 <div className="flex justify-center">
-                  <button className="flex items-center mb-4 justify-center gap-2 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
-                    Criar conta grátis <FaArrowRight />
+                  <button className="flex items-center mb-4 justify-center gap-2 rounded-md border border-pink-300
+                  px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
+                    <a href="/cadastro">
+                      Criar conta grátis
+                    </a>
+                    <FaArrowRight />
                   </button>
                 </div>
               </div>
@@ -97,9 +101,19 @@ function Plano() {
                   <span className="text-gray-500 dark:text-gray-300">/mês</span>
                 </h4>
                 <div className="flex justify-center">
-                  <button className="flex items-center text-sm mb-4 justify-center gap-2 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
-                    Fale com um consultor <FaArrowRight />
-                  </button>
+                  <div className='relative group'>
+                    <button className="flex items-center text-sm mb-4 justify-center gap-2 rounded-md border border-pink-300
+                    px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
+                      Fale com um consultor <FaArrowRight />
+                    </button>
+                    <div className="absolute w-52 bg-white text-black border rounded-lg shadow-lg 
+                    opacity-0 group-hover:opacity-100 invisible p-2 group-hover:visible transition-all 
+                    duration-200">
+                      <div className='flex flex-row items-center hover:bg-gray-100'>
+                        <p className='text-center'>Em breve</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -191,9 +205,19 @@ function Plano() {
                   <span className="text-gray-500 dark:text-gray-300">/mês</span>
                 </h4>
                 <div className="flex justify-center">
-                  <button className="flex items-center text-sm justify-center mb-4 gap-2 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
-                    Fale com um consultor <FaArrowRight />
-                  </button>
+                  <div className='relative group'>
+                    <button className="flex items-center text-sm justify-center mb-4 gap-2 rounded-md border border-pink-300 px-4
+                    py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
+                      Fale com um consultor <FaArrowRight />
+                    </button>
+                    <div className="absolute w-52 bg-white text-black border rounded-lg shadow-lg 
+                    opacity-0 group-hover:opacity-100 invisible p-2 group-hover:visible transition-all 
+                    duration-200">
+                      <div className='flex flex-row items-center hover:bg-gray-100'>
+                        <p className='text-center'>Em breve</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -301,9 +325,19 @@ function Plano() {
                   <span className="text-gray-500 dark:text-gray-300">/mês</span>
                 </h4>
                 <div className="flex justify-center">
-                  <button className="flex items-center text-sm justify-center gap-2 mb-4 rounded-md border border-pink-300 px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
-                    Fale com um consultor <FaArrowRight />
-                  </button>
+                <div className='relative group'>
+                    <button className="flex items-center text-sm justify-center gap-2 mb-4 rounded-md border border-pink-300
+                    px-4 py-2 text-pink-300 font-semibold hover:bg-pink-300 hover:text-white transition">
+                      Fale com um consultor <FaArrowRight />
+                    </button>
+                    <div className="absolute w-52 bg-white text-black border rounded-lg shadow-lg 
+                      opacity-0 group-hover:opacity-100 invisible p-2 group-hover:visible transition-all 
+                      duration-200">
+                        <div className='flex flex-row items-center hover:bg-gray-100'>
+                          <p className='text-center'>Em breve</p>
+                        </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
