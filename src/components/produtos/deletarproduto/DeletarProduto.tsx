@@ -41,6 +41,7 @@ function DeletarProduto() {
             toast.error("Deu algo errado aqui mermão..")
         }
         setIsLoading(false)
+        retornar();
     }
 
     function retornar() {
