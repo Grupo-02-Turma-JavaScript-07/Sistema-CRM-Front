@@ -79,9 +79,6 @@ O CRM Flow G2 é uma plataforma moderna, intuitiva e responsiva que unifica a ge
 - Node.js instalado
 - Gerenciador de pacotes (yarn recomendado)
 
-### Passos para executar
-
-```bash
 # Clonar o repositório
 git clone https://github.com/seu-usuario/crm-flow-g2.git
 
@@ -94,7 +91,8 @@ yarn
 # Iniciar o servidor de desenvolvimento
 yarn dev
 
-## 📈 8. Próximos Passos e Melhorias Futuras
+---
+### 📈 8. Próximos Passos e Melhorias Futuras
 
 - Implementar dashboard com métricas de vendas e desempenho.
 - Sistema de login completo com autenticação e autorização.
@@ -114,5 +112,4 @@ yarn dev
 - Miguel Ferreira  
 - Taís Escobar  
 
----
 *"Um bom relacionamento com o cliente começa com uma boa organização." – Equipe CRM Flow G2*
