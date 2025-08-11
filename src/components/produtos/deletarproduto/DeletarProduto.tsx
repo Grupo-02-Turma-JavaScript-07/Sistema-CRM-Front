@@ -6,6 +6,7 @@ import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import { FiTrash2, FiX } from "react-icons/fi"
 import { toast } from "react-toastify"
+import NavbarPerfil from "../../navbarperfil/NavbarPerfil"
 
 function DeletarProduto() {
 
@@ -50,9 +51,9 @@ function DeletarProduto() {
     
     return (
         <div className="flex flex-col justify-center items-center min-h-screen px-4">
-            {/* <div className="fixed top-0 left-0 w-full">
+            <div className="fixed top-0 left-0 w-full">
             <NavbarPerfil />
-            </div> */}
+            </div>
             <h1 className='text-3xl font-bold  text-gray-900 mb-2'>Deletar Produto</h1>
 
             <p className='text-gray-600 mb-6 text-center max-w-lg'>
