@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import { TypeAnimation } from "react-type-animation"
 
 function CtaHome() {
   return (
@@ -7,10 +8,25 @@ function CtaHome() {
         <span className="text-sm font-medium text-slate-500 mb-4 border border-slate-200 px-3 py-1 rounded-full">
           Seu marketplace moderno
         </span>
+
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">
-          Descubra, gerencie e venda <br />
-          com elegância
+          <TypeAnimation
+            sequence={[
+              "Descubra, gerencie e venda com elegância", // texto
+              2000, // tempo que fica parado antes de apagar
+              "", // apaga tudo
+              "Gerencie seu negócio com velocidade e estilo",
+              2000,
+              "",
+              "Transforme visitantes em clientes fiéis",
+              2000
+            ]}
+            wrapper="span"
+            speed={50} // velocidade de digitação
+            repeat={Infinity} // loop infinito
+          />
         </h1>
+
         <p className="text-slate-500 max-w-xl text-ms mb-8">
           Navegue por categorias, explore a vitrine por vendedor e cadastre usuários em uma interface rápida e bonita.
         </p>
