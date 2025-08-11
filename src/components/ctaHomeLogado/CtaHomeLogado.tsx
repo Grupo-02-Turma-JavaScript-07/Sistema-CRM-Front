@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-function CtaHome() {
+function CtaHomeLogado() {
   return (
     <>
       <section className="flex flex-col border-inl border-purple-400 items-center justify-center text-center px-4 py-20">
@@ -15,13 +15,13 @@ function CtaHome() {
           Navegue por categorias, explore a vitrine por vendedor e cadastre usuários em uma interface rápida e bonita.
         </p>
         <div className="flex gap-4 mb-6">
-          <Link to="/planos" className="bg-gradient-to-r from-[#62268d] to-[#9d5ec9] hover:from-[#9d5ec9] hover:to-[#62268d] text-white px-5 py-2 rounded-lg font-medium shadow hover:opacity-90 transition">
+          {/* <Link to="/planos" className="bg-gradient-to-r from-[#62268d] to-[#9d5ec9] hover:from-[#9d5ec9] hover:to-[#62268d] text-white px-5 py-2 rounded-lg font-medium shadow hover:opacity-90 transition">
             Explorar planos
-          </Link>
-          {/* #todo: vamos usar uma rota para planos?? */}
-          {/* <Link to="/vendedores" className="bg-white text-slate-700 border border-slate-300 px-5 py-2 rounded-lg font-medium shadow hover:bg-slate-50 transition">
-            Vitrine por vendedor
           </Link> */}
+          {/* #todo: vamos usar uma rota para planos?? */}
+          <Link to="/produtos" className="bg-gradient-to-r from-[#62268d] to-[#9d5ec9] hover:from-[#9d5ec9] hover:to-[#62268d] text-white px-5 py-2 rounded-lg font-medium shadow hover:opacity-90 transition">
+            Vitrine por vendedor
+          </Link>
         </div>
         <div className="text-slate-500 text-sm flex items-center gap-2">
           <span>🔍</span>
@@ -32,4 +32,4 @@ function CtaHome() {
   )
 }
 
-export default CtaHome
+export default CtaHomeLogado

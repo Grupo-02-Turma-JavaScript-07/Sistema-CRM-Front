@@ -14,6 +14,7 @@ import FormProduto from './components/produtos/formproduto/FormProduto';
 import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCategoria";
 import FormCategoria from "./components/categorias/formcategoria/FormCategoria";
 import Categoria from "./pages/categoria/Categoria";
+import HomeLogado from "./pages/homeLogado/HomeLogado";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
+            <Route path="/homelogado" element={<HomeLogado />} />
             <Route path="/produtos" element={<Produto />} />
             <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
             <Route path="/editarproduto/:id" element={<FormProduto />} />

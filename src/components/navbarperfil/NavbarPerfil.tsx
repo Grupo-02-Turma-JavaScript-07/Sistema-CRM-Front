@@ -37,9 +37,9 @@ function NavbarPerfil() {
         {/* Menu central no desktop */}
         <nav className="hidden md:flex items-center gap-6 text-lg font-medium mx-auto">
           <Link
-            to="/"
+            to="/homelogado"
             className={`px-3 py-1 rounded-md transition ${
-              ['/produtos', '/perfil','/planos', '/categorias', '/home'].includes(location.pathname)
+              ['/produtos', '/perfil','/planos', '/categorias', '/homelogado'].includes(location.pathname)
                 ? 'bg-slate-100 text-purple-400'
                 : 'text-slate-800 hover:text-purple-400'
             }`}
@@ -108,7 +108,7 @@ function NavbarPerfil() {
             to="/"
             onClick={() => setMenuOpen(false)}
             className={`px-3 py-2 rounded-md text-left w-full transition ${
-              ['/produtos', '/perfil','/planos', '/categorias', '/home'].includes(location.pathname)
+              ['/produtos', '/perfil','/planos', '/categorias', '/home', '/homelogado'].includes(location.pathname)
                 ? 'bg-slate-100 text-purple-400'
                 : 'text-slate-800 hover:text-purple-400'
             }`}
