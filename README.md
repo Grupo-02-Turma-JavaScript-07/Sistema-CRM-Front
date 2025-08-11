@@ -1,6 +1,6 @@
 # 📇 CRM Flow G2 – Sistema de Gestão de Relacionamento com Clientes
 
-Projeto integrador II, desenvolvido pelo Grupo 2 como parte do projeto final da Generation Brasil, com o objetivo de criar um sistema completo para gestão de clientes, produtos, categorias e planos, facilitando a organização e o acompanhamento das relações comerciais.
+Projeto integrador II, desenvolvido como parte do projeto final da Generation Brasil, com o objetivo de criar um sistema completo para gestão de clientes, produtos, categorias e planos, facilitando a organização e o acompanhamento das relações comerciais.
 
 ---
 
