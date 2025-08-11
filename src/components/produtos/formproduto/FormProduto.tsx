@@ -262,24 +262,34 @@ function FormProduto() {
                         ))}
                     </select>
                 </div>
-
-                <button
-                    type='submit'
-                    className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
-                            text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
-                    disabled={carregandoCategoria || carregandoUsuario || isLoading}
-                >
-                    {isLoading ?
-                        <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                        <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
-                    }
-                </button>
+                
+                <div className="flex gap-4 justify-end">
+                    <button
+                        type='submit'
+                        className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
+                        text-white font-bold w-1/2 mx-auto py-2 flex justify-center'
+                        disabled={carregandoCategoria || carregandoUsuario || isLoading}
+                    >
+                        {isLoading ?
+                            <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                            <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>
+                        }
+                    </button>
+                    <button
+                        type="button"
+                        className="ounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
+                        text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
+                        onClick={retornar}
+                        >
+                            Cancelar
+                    </button>
+                </div>
             </form>
         </div>
     );
