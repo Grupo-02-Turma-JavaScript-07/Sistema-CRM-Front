@@ -5,7 +5,12 @@ import type Produto from "../../../models/Produto";
 import CardProduto from "../cardprodutos/CardProduto";
 import ModalProduto from "../modalprodutos/ModalProduto";
 
-function ListaProdutos() {
+interface ListaProdutosProps {
+  precoMin?: number;
+  precoMax?: number;
+}
+
+function ListaProdutos({ precoMin, precoMax }: ListaProdutosProps) {
     const [produtos, setProdutos] = useState<Produto[]>([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -28,6 +33,12 @@ function ListaProdutos() {
         buscarProdutos();
     }, []);
 
+    const produtosFiltrados = produtos.filter((p) => {
+    if (precoMin !== undefined && p.preco < precoMin) return false;
+    if (precoMax !== undefined && p.preco > precoMax) return false;
+    return true;
+    });
+
     return (
         <>
             {isLoading ? (
@@ -43,7 +54,7 @@ function ListaProdutos() {
                         <div className='container mx-auto my-4 
                             grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
                         >
-                            {produtos.map((produto) => (
+                            {produtosFiltrados.map((produto) => (
                                 <CardProduto key={produto.id} produto={produto} />
                             ))}
                         </div>
