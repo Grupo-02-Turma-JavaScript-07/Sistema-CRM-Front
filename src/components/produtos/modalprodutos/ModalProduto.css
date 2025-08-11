@@ -1,0 +1,11 @@
+/* cobre bem no mobile */
+.popup-content {
+  width: min(95vw, 720px);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 12px;
+  padding: 0; /* deixe o FormProduto controlar o padding */
+}
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}

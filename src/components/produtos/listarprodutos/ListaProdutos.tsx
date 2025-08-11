@@ -3,7 +3,8 @@ import { FallingLines } from "react-loader-spinner";
 import { buscar } from "../../../services/Service";
 import type Produto from "../../../models/Produto";
 import CardProduto from "../cardprodutos/CardProduto";
-import ModalProduto from "../modalprodutos/ModalProduto";
+// import ModalProduto from "../modalprodutos/ModalProduto";
+// import ModalProduto from "../modalprodutos/ModalProduto";
 
 interface ListaProdutosProps {
   precoMin?: number;
@@ -48,11 +49,11 @@ function ListaProdutos({ precoMin, precoMax }: ListaProdutosProps) {
             ) : (
                 <div className="flex justify-center w-full my-4">
                     <div className="container flex flex-col mx-2">
-                        <div className="flex justify-end items-center">
+                        {/* <div className="flex justify-end items-center">
                             <ModalProduto/>
-                        </div>
+                        </div> */}
                         <div className='container mx-auto my-4 
-                            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
+                            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'
                         >
                             {produtosFiltrados.map((produto) => (
                                 <CardProduto key={produto.id} produto={produto} />
