@@ -6,7 +6,6 @@ import type Produto from "../../../models/Produto";
 import type Usuario from "../../../models/Usuario";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
-import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
 import { toast } from "react-toastify";
 
 function FormProduto() {

@@ -37,8 +37,6 @@ function Login() {
       } else {
         toast.success("Login realizado com sucesso!");
         navigate("/produtos");
-
-        //alterar para toast.sucess e adicionar o /navigate /produtos
       }
     } finally {
       setIsLoading(false);
