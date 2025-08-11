@@ -18,7 +18,7 @@ function FormProduto() {
     // #todo: fazer o state para os usuarios
     const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
-    const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: '',} as Categoria)
+    const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: '', } as Categoria)
     const [usuario, setUsuario] = useState<Usuario>({ id: 0 } as Usuario);
 
     const [produto, setProduto] = useState<Produto>({} as Produto)
@@ -30,17 +30,17 @@ function FormProduto() {
         try {
             await buscar(`/produtos/${id}`, setProduto)
         } catch (error: any) {
-                console.error(error);
-            }
+            console.error(error);
+        }
     }
 
     async function buscarCategoriaPorId(id: string) {
         try {
             await buscar(`/categorias/${id}`, setCategoria)
         } catch (error: any) {
-            
-                console.error(error);
-            }
+
+            console.error(error);
+        }
     }
 
     // #todo: fazer o state para os usuarios
@@ -48,15 +48,15 @@ function FormProduto() {
         try {
             await buscar(`/usuarios/${id}`, setUsuario);
         } catch (error: any) {
-                console.error(error);
-            }
+            console.error(error);
+        }
     }
 
     async function buscarCategorias() {
         try {
             await buscar('/categorias', setCategorias)
         } catch (error: any) {
-                console.error(error);
+            console.error(error);
         }
     }
 
@@ -65,7 +65,7 @@ function FormProduto() {
         try {
             await buscar("/usuarios", setUsuarios);
         } catch (error: any) {
-                console.error(error);
+            console.error(error);
         }
     }
 
@@ -106,14 +106,14 @@ function FormProduto() {
                 ? Number(value.replace(",", "."))
                 : value;
 
-            if (
+        if (
             (name === "preco" || name === "quantidade") &&
             typeof normalizado === "number" &&
             normalizado < 0
-            ) {
-                toast.error("Impossível adicionar o preço com valor negativo.")
-                return;
-            }
+        ) {
+            toast.error("Impossível adicionar o preço com valor negativo.")
+            return;
+        }
 
         setProduto({
             ...produto,
@@ -138,8 +138,8 @@ function FormProduto() {
                 toast.success("Produto atualizado com sucesso!");
 
             } catch (error: any) {
-                    console.error(error);
-                    toast.error("Erro ao atualizar o produto!");
+                console.error(error);
+                toast.error("Erro ao atualizar o produto!");
             }
 
         } else {
@@ -149,11 +149,11 @@ function FormProduto() {
                 toast.success("Produto cadastrado com sucesso!");
 
             } catch (error: any) {
-                    console.error(error);
-                    toast.error("Deu algum erro para cadastrar o produto...");
-                }
+                console.error(error);
+                toast.error("Deu algum erro para cadastrar o produto...");
             }
-        
+        }
+
 
         setIsLoading(false)
         retornar()
@@ -164,10 +164,10 @@ function FormProduto() {
 
     return (
         <div className="container flex flex-col mx-auto items-center pt-20">
-                <div className="fixed top-0 left-0 w-full z-50">
+            {/* <div className="fixed top-0 left-0 w-full z-50">
                 <NavbarPerfil />
-                </div>
-            <h1 className="text-4xl text-center my-8">
+            </div> */}
+            <h1 className="text-4xl text-center mb-10">
                 {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
             </h1>
 
@@ -240,7 +240,7 @@ function FormProduto() {
                 <div className="flex flex-col gap-2">
                     <p>Qual o Usuário</p>
                     <select name="usuario" id="usuario" className='border p-2 border-slate-800 rounded'
-                    value={usuario.id || ""}
+                        value={usuario.id || ""}
                         onChange={(e) => buscarUsuarioPorId(e.currentTarget.value)}
                     >
                         <option value="" disabled>Selecione um Usuário</option>
@@ -262,7 +262,7 @@ function FormProduto() {
                         ))}
                     </select>
                 </div>
-                
+
                 <div className="flex gap-4 justify-end">
                     <button
                         type='submit'
@@ -286,8 +286,8 @@ function FormProduto() {
                         className="ounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
                         text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
                         onClick={retornar}
-                        >
-                            Cancelar
+                    >
+                        Cancelar
                     </button>
                 </div>
             </form>
