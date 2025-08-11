@@ -20,9 +20,7 @@ function DeletarProduto() {
         try {
             await buscar(`/produtos/${id}`, setProduto)
         } catch (error: any){
-             if (error.toString().includes('403')) {
                 console.error(error);
-            }
         }
     }
 
@@ -39,11 +37,8 @@ function DeletarProduto() {
             await deletar(`/produtos/${id}`)
             toast.success("Mandei pro lixo com sucesso!")
         } catch (error: any) {
-            if (error.toString().includes('401')) {
-                console.error(error);
-            }else {
-                toast.error("Deu algo errado aqui mermão..")
-            }
+            console.error(error);
+            toast.error("Deu algo errado aqui mermão..")
         }
         setIsLoading(false)
     }
@@ -63,7 +58,7 @@ function DeletarProduto() {
                 Você tem certeza de que deseja apagar o produto a seguir do sistema? Essa ação não poderá ser desfeita.
             </p>
 
-             <div className='bg-white border rounded-xl shadow-sm p-6 max-w-2xl w-full leading-relaxed'>
+            <div className='bg-white border rounded-xl shadow-sm p-6 max-w-2xl w-full leading-relaxed'>
                 {/*
                 <header className="flex items-center gap-2 text-2xl font-bold text-gray-900">
                 {produto.nome}

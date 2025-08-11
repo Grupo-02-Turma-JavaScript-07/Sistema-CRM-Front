@@ -30,20 +30,17 @@ function FormProduto() {
         try {
             await buscar(`/produtos/${id}`, setProduto)
         } catch (error: any) {
-            if (error.toString().includes('401')) {
                 console.error(error);
             }
-        }
     }
 
     async function buscarCategoriaPorId(id: string) {
         try {
             await buscar(`/categorias/${id}`, setCategoria)
         } catch (error: any) {
-            if (error.toString().includes('401')) {
+            
                 console.error(error);
             }
-        }
     }
 
     // #todo: fazer o state para os usuarios
@@ -51,19 +48,15 @@ function FormProduto() {
         try {
             await buscar(`/usuarios/${id}`, setUsuario);
         } catch (error: any) {
-            if (error.toString().includes('401')) {
                 console.error(error);
             }
-        }
     }
 
     async function buscarCategorias() {
         try {
             await buscar('/categorias', setCategorias)
         } catch (error: any) {
-            if (error.toString().includes('401')) {
                 console.error(error);
-            }
         }
     }
 
@@ -72,9 +65,7 @@ function FormProduto() {
         try {
             await buscar("/usuarios", setUsuarios);
         } catch (error: any) {
-            if (error.toString().includes('401')) {
                 console.error(error);
-            }
         }
     }
 
@@ -147,11 +138,8 @@ function FormProduto() {
                 toast.success("Produto atualizado com sucesso!");
 
             } catch (error: any) {
-                if (error.toString().includes('401')) {
                     console.error(error);
-                } else {
                     toast.error("Erro ao atualizar o produto!");
-                }
             }
 
         } else {
@@ -161,13 +149,11 @@ function FormProduto() {
                 toast.success("Produto cadastrado com sucesso!");
 
             } catch (error: any) {
-                if (error.toString().includes('401')) {
                     console.error(error);
-                } else {
                     toast.error("Deu algum erro para cadastrar o produto...");
                 }
             }
-        }
+        
 
         setIsLoading(false)
         retornar()
