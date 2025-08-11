@@ -33,10 +33,10 @@ function Login() {
       // o email que o usuario digitou para fazer login de verdade 😔
       if (usuarioLogin.email === "admin@exemplo.com" && usuarioLogin.senha === "123") {
         toast.success("Login realizado com sucesso!");
-        navigate("/produtos");
+        navigate("/homelogado");
       } else {
         toast.success("Login realizado com sucesso!");
-        navigate("/produtos");
+        navigate("/homelogado");
       }
     } finally {
       setIsLoading(false);
