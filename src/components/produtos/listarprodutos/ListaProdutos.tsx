@@ -1,50 +1,57 @@
 import { useState, useEffect } from "react";
-import { DNA } from "react-loader-spinner";
+import { FallingLines } from "react-loader-spinner";
 import { buscar } from "../../../services/Service";
 import type Produto from "../../../models/Produto";
 import CardProduto from "../cardprodutos/CardProduto";
+import ModalProduto from "../modalprodutos/ModalProduto";
 
 function ListaProdutos() {
-
-
     const [produtos, setProdutos] = useState<Produto[]>([]);
-
+    const [isLoading, setIsLoading] = useState(true);
 
     async function buscarProdutos() {
         try {
-            await buscar('/produtos', setProdutos,)
-
-        } catch (error: any){}
+            setIsLoading(true);
+            await buscar('/produtos', setProdutos);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (error: any) {
+            console.error("Erro ao buscar produtos", error);
+        } finally {
+            // O loader fica visível por pelo menos 2s
+            setTimeout(() => {
+                setIsLoading(false);
+            }, 2000);
+        }
     }
 
     useEffect(() => {
-        buscarProdutos()
-    }, [produtos.length])
+        buscarProdutos();
+    }, []);
 
     return (
         <>
-            {produtos.length === 0 && (
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
-                />
-            )}
-            <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col mx-2">
-                    <div className='container mx-auto my-4 
-                        grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-                    >
-                        {produtos.map((produto) => (
-                            <CardProduto key={produto.id} produto={produto} />
-                        ))}
+            {isLoading ? (
+                <div className="flex justify-center items-center h-screen">
+                    <FallingLines color="#A020F0" width="100" visible={true} />
+                </div>
+            ) : (
+                <div className="flex justify-center w-full my-4">
+                    <div className="container flex flex-col mx-2">
+                        <div className="flex justify-end items-center">
+                            <ModalProduto/>
+                        </div>
+                        <div className='container mx-auto my-4 
+                            grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
+                        >
+                            {produtos.map((produto) => (
+                                <CardProduto key={produto.id} produto={produto} />
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            )}
         </>
     );
 }
+
 export default ListaProdutos;

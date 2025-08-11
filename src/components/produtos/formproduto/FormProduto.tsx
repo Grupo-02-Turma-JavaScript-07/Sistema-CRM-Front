@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState, type ChangeEvent } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import type Categoria from "../../../models/Categoria";
@@ -28,9 +28,9 @@ function FormProduto() {
         try {
             await buscar(`/produtos/${id}`, setProduto)
         } catch (error: any) {
-            // if (error.toString().includes('401')) {
-            //     handleLogout()
-            // }
+            if (error.toString().includes('401')) {
+                console.error(error);
+            }
         }
     }
 
@@ -38,9 +38,9 @@ function FormProduto() {
         try {
             await buscar(`/categorias/${id}`, setCategoria)
         } catch (error: any) {
-            // if (error.toString().includes('401')) {
-            //     handleLogout()
-            // }
+            if (error.toString().includes('401')) {
+                console.error(error);
+            }
         }
     }
 
@@ -49,9 +49,9 @@ function FormProduto() {
         try {
             await buscar(`/usuarios/${id}`, setUsuario);
         } catch (error: any) {
-            // if (error.toString().includes('401')) {
-            //     handleLogout()
-            // }
+            if (error.toString().includes('401')) {
+                console.error(error);
+            }
         }
     }
 
@@ -59,9 +59,9 @@ function FormProduto() {
         try {
             await buscar('/categorias', setCategorias)
         } catch (error: any) {
-            // if (error.toString().includes('401')) {
-            //     handleLogout()
-            // }
+            if (error.toString().includes('401')) {
+                console.error(error);
+            }
         }
     }
 
@@ -70,12 +70,11 @@ function FormProduto() {
         try {
             await buscar("/usuarios", setUsuarios);
         } catch (error: any) {
-            // if (error.toString().includes('401')) {
-            //     handleLogout()
-            // }
+            if (error.toString().includes('401')) {
+                console.error(error);
+            }
         }
     }
-
 
     useEffect(() => {
         buscarCategorias()
@@ -105,7 +104,6 @@ function FormProduto() {
             usuario: usuario,
         });
     }, [usuario]);
-
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target;
@@ -139,7 +137,7 @@ function FormProduto() {
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
-                    handleLogout()
+                    console.error(error);
                 } else {
                     alert("Erro ao atualizar o produto!");
                 }
@@ -153,7 +151,7 @@ function FormProduto() {
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
-                    handleLogout()
+                    console.error(error);
                 } else {
                     alert("Deu algum erro para cadastrar o produto...");
                 }
@@ -242,37 +240,29 @@ function FormProduto() {
                 <div className="flex flex-col gap-2">
                     <p>Qual o Usuário</p>
                     <select name="usuario" id="usuario" className='border p-2 border-slate-800 rounded'
+                    value={usuario.id || ""}
                         onChange={(e) => buscarUsuarioPorId(e.currentTarget.value)}
                     >
-                        <option value="" selected disabled>Selecione um Usuário</option>
-
+                        <option value="" disabled>Selecione um Usuário</option>
                         {usuarios.map((usuario) => (
-                            <>
-                                <option value={usuario.id} >{usuario.nome}</option>
-                            </>
+                            <option key={usuario.id} value={usuario.id}>{usuario.nome}</option>
                         ))}
-
                     </select>
                 </div>
-
-
-
 
                 <div className="flex flex-col gap-2">
                     <p>Categoria do Produto</p>
                     <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded'
+                        value={categoria.id || ""}
                         onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
                     >
-                        <option value="" selected disabled>Selecione uma Categoria</option>
-
+                        <option value="" disabled>Selecione uma Categoria</option>
                         {categorias.map((categoria) => (
-                            <>
-                                <option value={categoria.id} >{categoria.descricao}</option>
-                            </>
+                            <option key={categoria.id} value={categoria.id}>{categoria.descricao}</option>
                         ))}
-
                     </select>
                 </div>
+
                 <button
                     type='submit'
                     className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800

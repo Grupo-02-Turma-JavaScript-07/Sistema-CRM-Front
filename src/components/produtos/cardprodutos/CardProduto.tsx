@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import type Produto from "../../../models/Produto";
+import { FiEdit2, FiTrash2 } from "react-icons/fi";
 
 interface CardProdutoProps{
     produto: Produto;
@@ -18,13 +20,17 @@ function CardProduto ( {produto} : CardProdutoProps ) {
                 </div>
 
                 <div className="flex items-center justify-between mb-4">
-                    <span className="text-xl font-bold text-gray-900 dark:text-white">R$ 599,00</span>
+                    <span className="text-xl font-bold text-gray-900 dark:text-white">{produto.preco}</span>
                     <span className="text-sm bg-green-100 text-green-800 px-2 py-1 rounded dark:bg-green-200 dark:text-green-900">Disponível</span>
                 </div>
 
                 <div className="flex space-x-2">
-                    <a href="#" className="w-full text-center text-sm text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md">Ver detalhes</a>
-                    <a href="#" className="w-full text-center text-sm text-blue-600 border border-blue-600 hover:bg-blue-50 px-4 py-2 rounded-md">Editar</a>
+                    <Link to={`/deletarproduto/${produto.id}`} className="w-full flex items-center gap-1 text-center justify-center text-sm text-white  bg-red-500 hover:bg-red-60 px-4 py-2 rounded-md">
+                       <FiTrash2 />
+                    Deletar</Link>
+                    <Link to={`/editarproduto/${produto.id}`} className="w-full flex items-center gap-1 text-center justify-center text-sm text-blue-600 border border-blue-600 hover:bg-blue-50 px-4 py-2 rounded-md">
+                    <FiEdit2/>
+                    Editar</Link>
                 </div>
             </div>
         </div>
