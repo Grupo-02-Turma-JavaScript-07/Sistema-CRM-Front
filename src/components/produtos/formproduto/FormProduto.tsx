@@ -7,6 +7,7 @@ import type Usuario from "../../../models/Usuario";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
+import { toast } from "react-toastify";
 
 function FormProduto() {
 
@@ -114,6 +115,15 @@ function FormProduto() {
                 ? Number(value.replace(",", "."))
                 : value;
 
+            if (
+            (name === "preco" || name === "quantidade") &&
+            typeof normalizado === "number" &&
+            normalizado < 0
+            ) {
+                toast.error("Impossível adicionar o preço com valor negativo.")
+                return;
+            }
+
         setProduto({
             ...produto,
             [name]: normalizado as any,
@@ -134,13 +144,13 @@ function FormProduto() {
             try {
                 await atualizar(`/produtos`, produto, setProduto);
 
-                alert("Produto atualizado com sucesso!");
+                toast.success("Produto atualizado com sucesso!");
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     console.error(error);
                 } else {
-                    alert("Erro ao atualizar o produto!");
+                    toast.error("Erro ao atualizar o produto!");
                 }
             }
 
@@ -148,13 +158,13 @@ function FormProduto() {
             try {
                 await cadastrar(`/produtos`, produto, setProduto)
 
-                alert("Produto cadastrado com sucesso!");
+                toast.success("Produto cadastrado com sucesso!");
 
             } catch (error: any) {
                 if (error.toString().includes('401')) {
                     console.error(error);
                 } else {
-                    alert("Deu algum erro para cadastrar o produto...");
+                    toast.error("Deu algum erro para cadastrar o produto...");
                 }
             }
         }

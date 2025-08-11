@@ -5,6 +5,7 @@ import type Produto from "../../../models/Produto"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import { FiTrash2, FiX } from "react-icons/fi"
+import { toast } from "react-toastify"
 
 function DeletarProduto() {
 
@@ -36,12 +37,12 @@ function DeletarProduto() {
 
         try {
             await deletar(`/produtos/${id}`)
-            alert("Mandei pro lixo com sucesso!")
+            toast.success("Mandei pro lixo com sucesso!")
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 console.error(error);
             }else {
-                alert("Deu algo errado aqui mermão..")
+                toast.error("Deu algo errado aqui mermão..")
             }
         }
         setIsLoading(false)

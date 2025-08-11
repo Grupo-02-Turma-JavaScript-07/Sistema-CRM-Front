@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { FaStore, FaTimes, FaBars } from 'react-icons/fa'
 import { useState, useRef, useEffect } from "react";
 import type Usuario from '../../models/Usuario';
+import { toast } from 'react-toastify';
 
 function NavbarPerfil() {
   const location = useLocation()
@@ -46,12 +47,7 @@ function NavbarPerfil() {
           >
             Home
           </Link>
-          {/* <Link
-            to="/planos"
-            className="text-slate-800 hover:text-purple-400 transition"
-          >
-            Planos
-          </Link> */}
+
           <Link
             to="/categorias"
             className="text-slate-800 hover:text-purple-400 transition"
@@ -93,10 +89,15 @@ function NavbarPerfil() {
                 <Link to="/perfil" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Meu Perfil
                 </Link>
-                <Link to="/home" className="block px-4 py-2 text-sm text-red-500 hover:bg-gray-100">
+                <Link onClick={() => {
+                toast.success("Deslogado com sucesso! Volta..");
+                setOpen(false);
+              } }
+              className="block px-4 py-2 text-sm text-red-500 hover:bg-gray-100" to={'/home'}                  >
                     Sair
                 </Link>
                 </div>
+                
             )}
             </div>
       </div>
@@ -115,13 +116,7 @@ function NavbarPerfil() {
           >
             Home
           </Link>
-          <Link
-            to="/planos"
-            onClick={() => setMenuOpen(false)}
-            className="text-slate-800 hover:text-purple-400 transition"
-          >
-            Planos
-          </Link>
+
           <Link
             to="/categorias"
             onClick={() => setMenuOpen(false)}

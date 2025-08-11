@@ -5,6 +5,7 @@ import { RotatingLines } from "react-loader-spinner";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import type Categoria from "../../../models/Categoria";
 import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
+import { toast } from "react-toastify";
 
 function FormCategoria() {
     const navigate = useNavigate();
@@ -46,18 +47,18 @@ function FormCategoria() {
         if (id !== undefined) {
             try {
                 await atualizar(`/categorias`, categoriaState, setCategoriaState);
-                alert("A Categoria foi atualizada com sucesso!");
+                toast.success("A Categoria foi atualizada com sucesso!");
             } catch (error: any) {
                 console.error(error);
-                alert("Erro ao atualizar categoria: " + error.message);
+                toast.error("Erro ao atualizar categoria: " + error.message);
             }
         } else {
             try {
                 await cadastrar(`/categorias`, categoriaState, setCategoriaState);
-                alert("A Categoria foi cadastrada com sucesso!");
+                toast.success("A Categoria foi cadastrada com sucesso!");
             } catch (error: any) {
                 console.error(error);
-                alert("Erro ao cadastrar categoria: " + error.message);
+                toast.error("Erro ao cadastrar categoria: " + error.message);
             }
         }
 
