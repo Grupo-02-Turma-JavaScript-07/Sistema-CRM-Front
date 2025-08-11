@@ -17,7 +17,7 @@ function FormProduto() {
     // #todo: fazer o state para os usuarios
     const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
-    const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: '',})
+    const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: '',} as Categoria)
     const [usuario, setUsuario] = useState<Usuario>({ id: 0 } as Usuario);
 
     const [produto, setProduto] = useState<Produto>({} as Produto)
