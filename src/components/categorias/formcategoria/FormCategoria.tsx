@@ -66,7 +66,7 @@ function FormCategoria() {
     }
 
     return (
-  <div className="container flex flex-col items-center mx-auto pt-50">
+  <div className="container flex flex-col items-center mx-auto pt-20">
     <div className="fixed top-0 left-0 w-full z-50">
                 <NavbarPerfil />
                 </div>

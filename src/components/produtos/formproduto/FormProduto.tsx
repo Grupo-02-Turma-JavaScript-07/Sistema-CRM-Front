@@ -6,6 +6,7 @@ import type Produto from "../../../models/Produto";
 import type Usuario from "../../../models/Usuario";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import NavbarPerfil from "../../navbarperfil/NavbarPerfil";
 
 function FormProduto() {
 
@@ -16,7 +17,7 @@ function FormProduto() {
     // #todo: fazer o state para os usuarios
     const [usuarios, setUsuarios] = useState<Usuario[]>([]);
 
-    const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: '', })
+    const [categoria, setCategoria] = useState<Categoria>({ id: 0, descricao: '',})
     const [usuario, setUsuario] = useState<Usuario>({ id: 0 } as Usuario);
 
     const [produto, setProduto] = useState<Produto>({} as Produto)
@@ -166,7 +167,10 @@ function FormProduto() {
     const carregandoUsuario = usuario.id === 0;
 
     return (
-        <div className="container flex flex-col mx-auto items-center">
+        <div className="container flex flex-col mx-auto items-center pt-20">
+                <div className="fixed top-0 left-0 w-full z-50">
+                <NavbarPerfil />
+                </div>
             <h1 className="text-4xl text-center my-8">
                 {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
             </h1>

@@ -25,7 +25,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/produtos" element={<Produto />} />
             <Route path="/cadastrarproduto/:id" element={<FormProduto />} />
-            <Route path="/deletarproduto/:id" element={<FormProduto />} />
+            <Route path="/editarproduto/:id" element={<FormProduto />} />
             <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
             <Route path="/planos" element={<Plano />} />
             <Route path="/categorias" element={<Categoria />} />
